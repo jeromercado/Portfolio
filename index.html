@@ -1,10 +1,244 @@
 <!DOCTYPE html>
 <html lang="en">
+<head><!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Homepage Portfolio</title>
   
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <style>
+    body {
+      background: url('https://cdn.dribbble.com/users/2318504/screenshots/13922760/media/e7fccb35cc9b5092e278e4b49edb28d7.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #ffffff;
+      font-family: 'Montserrat', sans-serif;
+      margin: 0; 
+    }
+
+    .navbar {
+      background-color: rgba(34, 34, 34, 0.8); 
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    .navbar-brand, .nav-link {
+      color: #00bcd4 !important; 
+    }
+
+    .navbar-nav .nav-link:hover {
+      background-color: rgba(0, 188, 212, 0.4);
+      color: #ffffff !important;
+    }
+    
+    .container {
+      text-align: center;
+      padding: 20px;
+      margin: 10vh auto;
+    }
+
+    #contact {
+      max-width: 800px; 
+      padding: 10px;
+      margin: 0 auto;
+      border: 2px solid rgba(255, 255, 255, 0.5);
+      border-radius: 5px;
+      background-color: rgba(0, 0, 0, 0.6); 
+    }
+
+    #projects {
+      max-width: 900px; 
+      padding: 20px;
+      margin: 0 auto; 
+      border: 2px solid rgba(255, 255, 255, 0.5);
+      border-radius: 10px;
+      background-color: rgba(0, 0, 0, 0.6);
+    }
+
+    .section {
+      display: none;
+    }
+
+    .active {
+      display: block;
+    }
+
+    .portfolio-btn {
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .btn {
+      background-color: transparent;
+      border: 2px solid rgba(255, 255, 255, 0.5);
+      color: #ffffff;
+      font-weight: 600;
+      margin: 5px;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+      width: 100%;
+      max-width: 200px;
+    }
+
+    .btn:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+      transform: scale(1.05);
+    }
+
+    h1, h3 {
+      font-weight: 600;
+      color: #00bcd4;
+      margin: 20px 0;
+    }
+
+    .portfolio {
+      background-color: transparent;
+      border-radius: 8px;
+      padding: 20px;
+      margin-top: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.5);
+    }
+
+    .contact-link {
+      margin-top: 10  px;
+      font-size: 18px;
+      color: #00bcd4;
+      text-decoration: none;
+    }
+
+    .contact-link:hover {
+      text-decoration: underline;
+    }
+
+    
+    @media (min-width: 576px) {
+      .portfolio-btn {
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">JEROME MERCADO</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#" onclick="showSection('home')">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" onclick="showSection('about')">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" onclick="showSection('projects')">Projects</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" onclick="showSection('contact')">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div id="home" class="section active">
+      <h1>EXPLORE THE FUTURE OF TECHNOLOGY!</h1>
+      <p>Dive into my innovative projects and discover what's on the horizon!</p>
+    </div>
+
+    <div id="about" class="section">
+      <h1>About Me</h1>
+      <p>This page serves as your gateway to my projects for the semester. Here, you'll find a curated collection of my work, showcasing my journey through various technologies and concepts. Each project reflects my growth and exploration in the tech world, and I invite you to dive in, learn, and share your thoughts!</p>
+    </div>
+
+    <div id="projects" class="section">
+      <h1>My Projects</h1>
+      <p>Here are some of the projects I have worked on.</p>
+
+      <div class="portfolio-btn">
+        <button class="btn" onclick="showPortfolio('portfolio1')">Portfolio 1</button>
+        <button class="btn" onclick="showPortfolio('portfolio2')">Portfolio 2</button>
+        <button class="btn" onclick="showPortfolio('portfolio3')">Portfolio 3</button>
+        <button class="btn" onclick="showPortfolio('portfolio4')">Portfolio 4</button>
+        <button class="btn" onclick="showPortfolio('portfolio5')">Portfolio 5</button>
+      </div>
+
+      <div id="portfolio1" class="portfolio section">
+        <h3>Portfolio Item 1</h3>
+        <p>This is the content of portfolio item 1.</p>
+      </div>
+
+      <div id="portfolio2" class="portfolio section">
+        <h3>Portfolio Item 2</h3>
+        <p>This is the content of portfolio item 2.</p>
+      </div>
+
+      <div id="portfolio3" class="portfolio section">
+        <h3>Portfolio Item 3</h3>
+        <p>This is the content of portfolio item 3.</p>
+      </div>
+
+      <div id="portfolio4" class="portfolio section">
+        <h3>Portfolio Item 4</h3>
+        <p>This is the content of portfolio item 4.</p>
+      </div>
+
+      <div id="portfolio5" class="portfolio section">
+        <h3>Portfolio Item 5</h3>
+        <p>This is the content of portfolio item 5.</p>
+      </div>
+    </div>
+
+    <div id="contact" class="section">
+      <h1>Contact Me</h1>
+      <p>This is the Contact page content.</p>
+
+      <div class="portfolio">
+        <h3>Email</h3>
+        <p><a class="contact-link" href="mailto:mercadojerome071204@gmail.com">mercadojerome071204@gmail.com</a></p>
+      </div>
+
+      <div class="portfolio">
+        <h3>Facebook</h3>
+        <p><a class="contact-link" href="https://web.facebook.com/index.php/?_rdc=1&_rdr" target="_blank">Facebook Profile</a></p>
+      </div>
+
+      <div class="portfolio">
+        <h3>Twitter</h3>
+        <p><a class="contact-link" href="https://twitter.com/home" target="_blank">Twitter Profile</a></p>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+
+  <script>
+    function showSection(sectionId) {
+      const sections = document.querySelectorAll('.section');
+      sections.forEach(section => section.classList.remove('active'));
+      document.getElementById(sectionId).classList.add('active');
+    }
+
+    function showPortfolio(portfolioId) {
+      const portfolios = document.querySelectorAll('.portfolio');
+      portfolios.forEach(portfolio => portfolio.classList.remove('active'));
+      document.getElementById(portfolioId).classList.add('active');
+    }
+  </script>
+</body>
+</html>
+
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
