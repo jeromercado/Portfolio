@@ -38,7 +38,8 @@
       border: 2px solid rgba(255, 255, 255, 0.5); 
       border-radius: 10px; 
       margin: 10vh auto; 
-      max-width: 800px; 
+      width: 90%;
+      max-width: 800px;
     }
 
     .section {
@@ -101,9 +102,11 @@
       text-decoration: underline;
     }
 
+    /* Responsive styling */
     @media (min-width: 576px) {
       .portfolio-btn {
         flex-direction: row; 
+        flex-wrap: wrap;
       }
     }
   </style>
@@ -211,4 +214,15 @@
   <script>
     function showSection(sectionId) {
       const sections = document.querySelectorAll('.section');
-      sections.for
+      sections.forEach(section => section.classList.remove('active'));
+      document.getElementById(sectionId).classList.add('active');
+    }
+
+    function showPortfolio(portfolioId) {
+      const portfolios = document.querySelectorAll('.portfolio');
+      portfolios.forEach(portfolio => portfolio.classList.remove('active'));
+      document.getElementById(portfolioId).classList.add('active');
+    }
+  </script>
+</body>
+</html>
