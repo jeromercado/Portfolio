@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Explore Beautiful Destinations</title>
-    <!-- Google Fonts -->
+    
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Lora:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
@@ -111,56 +111,54 @@
     <a href="#about" onclick="showSection('about')">About</a>
 </nav>
 
-<!-- Home Section -->
+
 <section id="home" class="active">
     <div class="container">
-        <h2>Welcome to Our Travel Guide</h2>
-        <p>Discover stunning destinations across the world and plan your next vacation with us!</p>
+        <h2>WELCOME TO KYOTO JAPAN</h2>
+        <p>Let's explore the breathtaking beauty of Kyoto, Japan</p>
     </div>
 </section>
 
-<!-- Destinations Section -->
+
 <section id="destinations">
     <h2>Featured Destinations</h2>
     <div class="featured-destinations">
         <div class="destination">
-            <img src="destination1.jpg" alt="Beautiful Beach">
-            <h3>Beautiful Beach</h3>
-            <p>Relax by the ocean and enjoy the serenity of nature.</p>
+            <img src="https://cdn-v2.theculturetrip.com/610x406/wp-content/uploads/2024/01/atsushi-tsubokura-5ogug6eoyrk-unsplash-1.webp" alt="Arashiyama">
+            <h3>Arashiyama</h3>
+            <p>Arashiyama is a district on the western outskirts of Kyoto known for its beautiful nature and scenic temples. It has been popular since ancient times as an escape from the city to enjoy its natural setting. It is extremely popular during the cherry blossom season in spring and for the fall foliage season in autumn. Tenryu-ji Temple in Arashiyama is home to one of the most beautiful traditional Japanese stroll gardens in Kyoto.</p>
         </div>
         <div class="destination">
-            <img src="destination2.jpg" alt="Mountain Escape">
-            <h3>Mountain Escape</h3>
-            <p>Explore breathtaking mountain ranges and scenic views.</p>
+            <img src="https://cdn-v2.theculturetrip.com/610x407/wp-content/uploads/2024/06/rebecca-clarke-lo8ndu8fe_o-unsplash-min.webp" alt="Fushimi Inari Shrine">
+            <h3>Fushimi Inari Shrine</h3>
+            <p>Fushimi Inari Shrine sits at the base of a heavily forested mountain that is called Mount Inari.Trails that span four kilometers wind their way up from the main shrine buildings to the summit at the top. </p>
         </div>
         <div class="destination">
-            <img src="destination3.jpg" alt="Cultural Tour">
-            <h3>Cultural Tour</h3>
-            <p>Immerse yourself in rich cultures and historical landmarks.</p>
+            <img src="https://cdn-v2.theculturetrip.com/610x458/wp-content/uploads/2024/06/kiko-k-lufrpgwpbns-unsplash.webp" alt="Uji">
+            <h3>Uji</h3>
+            <p>Uji is a beautiful small city set in a green valley on the southern outskirts of Kyoto. The fast-flowing Uji River offers some spectacular views, with the area famous for its temples and green tea production. The spectacular Phoenix Hall at Byodo-in Temple in Uji. Nicknamed the “Temple of Flowers,” in spring, visitors can enjoy the beautiful gardens surrounding Mimuroto-ji Temple in Uji.</p>
         </div>
     </div>
 </section>
 
-<!-- About Section -->
+
 <section id="about">
     <h2>About This Site</h2>
     <div class="about-content">
-        <p>Welcome to our travel guide, where we bring you closer to some of the most beautiful destinations around the world. Our mission is to help you discover hidden gems, learn about local cultures, and explore breathtaking landscapes. Whether you're seeking adventure, relaxation, or cultural enrichment, we provide insights and information to make your journey unforgettable.</p>
-        
-        <p>Every destination we feature has been carefully selected to inspire and ignite your wanderlust. From sun-soaked beaches to majestic mountains and vibrant cities, let us guide you to your next incredible travel experience.</p>
-        
-        <p>So pack your bags, plan your itinerary, and start your journey with us as your guide to explore the wonders of the world.</p>
+        <p>Kyoto has been a place of scenic natural beauty since ancient times with little changing over the centuries.</p>
+        <p>There are countless places that both inspire and enchant visitors with their fairy-tale magic and out-of-this world experiences.</p>
+        <p>Nature can be found everywhere in Kyoto, from the spectacular mountain scenery of Arashiyama and swaying bamboo grove of Sagano to the endless tunnel of torii shrine gates that wind up the mountain in Fushimi, to the breathtaking bay views and crystal clear waters of Ine-cho, known as “The Venice of Japan.”</p>
     </div>
 </section>
 
 <script>
-    // JavaScript to handle navigation and section visibility
+   
     function showSection(sectionId) {
-        // Hide all sections
+       
         const sections = document.querySelectorAll('section');
         sections.forEach(section => section.classList.remove('active'));
 
-        // Show the selected section
+       
         const selectedSection = document.getElementById(sectionId);
         if (selectedSection) {
             selectedSection.classList.add('active');
