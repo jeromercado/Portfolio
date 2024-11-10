@@ -1,249 +1,172 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Homepage Portfolio</title>
-  
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-  
-  <style>
-    body {
-      background: url('https://cdn.dribbble.com/users/2318504/screenshots/13922760/media/e7fccb35cc9b5092e278e4b49edb28d7.jpg') no-repeat center center fixed;
-      background-size: cover;
-      color: #ffffff;
-      font-family: 'Montserrat', sans-serif;
-      margin: 0;
-    }
-
-    .navbar {
-      background-color: rgba(34, 34, 34, 0.8);
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-    }
-
-    .navbar-brand, .nav-link {
-      color: #00bcd4 !important;
-    }
-
-    .navbar-nav .nav-link:hover {
-      background-color: rgba(0, 188, 212, 0.4);
-      color: #ffffff !important;
-    }
-
-    .container {
-      text-align: center;
-      padding: 20px;
-      border: 2px solid rgba(255, 255, 255, 0.5);
-      border-radius: 10px;
-      margin: 10vh auto;
-      width: 90%;
-      max-width: 800px;
-    }
-
-    .section {
-      display: none;
-    }
-
-    .active {
-      display: block;
-    }
-
-    .portfolio-btn {
-      margin-top: 20px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .btn {
-      background-color: transparent;
-      border: 2px solid rgba(255, 255, 255, 0.5);
-      color: #ffffff;
-      font-weight: 600;
-      margin: 5px;
-      transition: background-color 0.3s ease, transform 0.3s ease;
-      width: 100%;
-      max-width: 200px;
-    }
-
-    .btn:hover {
-      background-color: rgba(255, 255, 255, 0.2);
-      transform: scale(1.05);
-    }
-
-    h1, h3 {
-      font-weight: 600;
-      color: #00bcd4;
-      margin: 20px 0;
-    }
-
-    #contact {
-      padding: 15px;
-    }
-
-    .portfolio {
-      background-color: transparent;
-      border-radius: 8px;
-      padding: 20px;
-      margin-top: 20px;
-      border: 1px solid rgba(255, 255, 255, 0.5);
-    }
-
-    .contact-link {
-      margin-top: 10px;
-      font-size: 18px;
-      color: #00bcd4;
-      text-decoration: none;
-    }
-
-    .contact-link:hover {
-      text-decoration: underline;
-    }
-
-    @media (min-width: 576px) {
-      .portfolio-btn {
-        flex-direction: row;
-        flex-wrap: wrap;
-      }
-    }
-
-    @media (max-width: 575.98px) {
-      .navbar-brand {
-        font-size: 18px;
-      }
-
-      h1 {
-        font-size: 24px;
-      }
-
-      .btn {
-        max-width: 100%;
-      }
-
-      .portfolio-btn {
-        flex-direction: column;
-      }
-
-      .container {
-        width: 95%;
-        padding: 10px;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Explore Beautiful Destinations</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Lora:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background: url('https://www.tripsavvy.com/thmb/X5Arn4O52C9eq3g50PFlONdMxaY=/2500x1669/filters:fill(auto,1)/kyoto-3a749c7099fd44cb9fe065e7707f82ac.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+        }
+        header {
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+        header h1 {
+            font-family: 'Lora', serif;
+            font-size: 2.5em;
+            margin: 0;
+        }
+        header p {
+            font-size: 1.2em;
+            margin: 5px 0 0;
+        }
+        nav {
+            background-color: rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: center;
+            padding: 10px 0;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        nav a:hover {
+            color: #ff6347;
+        }
+        section {
+            display: none;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        section.active {
+            display: block;
+        }
+        .featured-destinations {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        .destination {
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            width: 30%;
+            margin: 10px;
+            overflow: hidden;
+            text-align: center;
+        }
+        .destination img {
+            width: 100%;
+            height: auto;
+        }
+        .destination h3 {
+            padding: 15px;
+            background-color: #333;
+            color: white;
+            font-family: 'Lora', serif;
+        }
+        .destination p {
+            padding: 15px;
+            color: #333;
+        }
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: rgba(255, 255, 255, 0.8);
+            color: #333;
+            padding: 20px;
+            border-radius: 10px;
+            font-size: 1.1em;
+            line-height: 1.6em;
+            text-align: left;
+        }
+    </style>
 </head>
 <body>
 
-  <nav class="navbar navbar-expand-lg navbar-dark">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">JEROME MERCADO</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="#" onclick="showSection('home')">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#" onclick="showSection('about')">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#" onclick="showSection('projects')">Projects</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#" onclick="showSection('contact')">Contact</a>
-          </li>
-        </ul>
-      </div>
+<header>
+    <h1>Explore Beautiful Destinations</h1>
+    <p>Your next adventure starts here</p>
+</header>
+
+<nav>
+    <a href="#home" onclick="showSection('home')">Home</a>
+    <a href="#destinations" onclick="showSection('destinations')">Destinations</a>
+    <a href="#about" onclick="showSection('about')">About</a>
+</nav>
+
+<!-- Home Section -->
+<section id="home" class="active">
+    <div class="container">
+        <h2>Welcome to Our Travel Guide</h2>
+        <p>Discover stunning destinations across the world and plan your next vacation with us!</p>
     </div>
-  </nav>
+</section>
 
-  <div class="container">
-    <div id="home" class="section active">
-      <h1>EXPLORE THE FUTURE OF TECHNOLOGY!</h1>
-      <p>Dive into my innovative projects and discover what's on the horizon!</p>
+<!-- Destinations Section -->
+<section id="destinations">
+    <h2>Featured Destinations</h2>
+    <div class="featured-destinations">
+        <div class="destination">
+            <img src="destination1.jpg" alt="Beautiful Beach">
+            <h3>Beautiful Beach</h3>
+            <p>Relax by the ocean and enjoy the serenity of nature.</p>
+        </div>
+        <div class="destination">
+            <img src="destination2.jpg" alt="Mountain Escape">
+            <h3>Mountain Escape</h3>
+            <p>Explore breathtaking mountain ranges and scenic views.</p>
+        </div>
+        <div class="destination">
+            <img src="destination3.jpg" alt="Cultural Tour">
+            <h3>Cultural Tour</h3>
+            <p>Immerse yourself in rich cultures and historical landmarks.</p>
+        </div>
     </div>
+</section>
 
-    <div id="about" class="section">
-      <h1>About Me</h1>
-      <p>This page serves as your gateway to my projects for the semester. Here, you'll find a curated collection of my work, showcasing my journey through various technologies and concepts. Each project reflects my growth and exploration in the tech world, and I invite you to dive in, learn, and share your thoughts!</p>
+<!-- About Section -->
+<section id="about">
+    <h2>About This Site</h2>
+    <div class="about-content">
+        <p>Welcome to our travel guide, where we bring you closer to some of the most beautiful destinations around the world. Our mission is to help you discover hidden gems, learn about local cultures, and explore breathtaking landscapes. Whether you're seeking adventure, relaxation, or cultural enrichment, we provide insights and information to make your journey unforgettable.</p>
+        
+        <p>Every destination we feature has been carefully selected to inspire and ignite your wanderlust. From sun-soaked beaches to majestic mountains and vibrant cities, let us guide you to your next incredible travel experience.</p>
+        
+        <p>So pack your bags, plan your itinerary, and start your journey with us as your guide to explore the wonders of the world.</p>
     </div>
+</section>
 
-    <div id="projects" class="section">
-      <h1>My Projects</h1>
-      <p>Here are some of the projects I have worked on.</p>
+<script>
+    // JavaScript to handle navigation and section visibility
+    function showSection(sectionId) {
+        // Hide all sections
+        const sections = document.querySelectorAll('section');
+        sections.forEach(section => section.classList.remove('active'));
 
-      <div class="portfolio-btn">
-        <button class="btn" onclick="showPortfolio('portfolio1')">Portfolio 1</button>
-        <button class="btn" onclick="showPortfolio('portfolio2')">Portfolio 2</button>
-        <button class="btn" onclick="showPortfolio('portfolio3')">Portfolio 3</button>
-        <button class="btn" onclick="showPortfolio('portfolio4')">Portfolio 4</button>
-        <button class="btn" onclick="showPortfolio('portfolio5')">Portfolio 5</button>
-      </div>
-
-      <div id="portfolio1" class="portfolio section">
-        <h3>Portfolio Item 1</h3>
-        <p>This is the content of portfolio item 1.</p>
-      </div>
-
-      <div id="portfolio2" class="portfolio section">
-        <h3>Portfolio Item 2</h3>
-        <p>This is the content of portfolio item 2.</p>
-      </div>
-
-      <div id="portfolio3" class="portfolio section">
-        <h3>Portfolio Item 3</h3>
-        <p>This is the content of portfolio item 3.</p>
-      </div>
-
-      <div id="portfolio4" class="portfolio section">
-        <h3>Portfolio Item 4</h3>
-        <p>This is the content of portfolio item 4.</p>
-      </div>
-
-      <div id="portfolio5" class="portfolio section">
-        <h3>Portfolio Item 5</h3>
-        <p>This is the content of portfolio item 5.</p>
-      </div>
-    </div>
-
-    <div id="contact" class="section">
-      <h1>Contact Me</h1>
-      <p>This is the Contact page content.</p>
-
-      <div class="portfolio">
-        <h3>Email</h3>
-        <p><a class="contact-link" href="mailto:mercadojerome071204@gmail.com">mercadojerome071204@gmail.com</a></p>
-      </div>
-
-      <div class="portfolio">
-        <h3>Facebook</h3>
-        <p><a class="contact-link" href="https://web.facebook.com/index.php/?_rdc=1&_rdr" target="_blank">Facebook Profile</a></p>
-      </div>
-
-      <div class="portfolio">
-        <h3>Twitter</h3>
-        <p><a class="contact-link" href="https://twitter.com/home" target="_blank">Twitter Profile</a></p>
-      </div>
-    </div>
-  </div>
-
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
-
-  <script>
-    function showSection(id) {
-      document.querySelectorAll('.section').forEach(section => section.classList.remove('active'));
-      document.getElementById(id).classList.add('active');
+        // Show the selected section
+        const selectedSection = document.getElementById(sectionId);
+        if (selectedSection) {
+            selectedSection.classList.add('active');
+        }
     }
-
-    function showPortfolio(id) {
-      document.querySelectorAll('.portfolio').forEach(portfolio => portfolio.style.display = 'none');
-      document.getElementById(id).style.display = 'block';
-    }
-  </script>
+</script>
 
 </body>
 </html>
