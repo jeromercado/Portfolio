@@ -6,10 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Explore Beautiful Destinations</title>
     
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Lora:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: 'Roboto', sans-serif;
+            font-family: 'Open Sans', sans-serif;
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -20,33 +20,39 @@
         header {
             background-color: rgba(0, 0, 0, 0.7);
             color: white;
-            padding: 20px 0;
+            padding: 40px 20px;
             text-align: center;
+            border-bottom: 4px solid #ff6347;
         }
         header h1 {
             font-family: 'Lora', serif;
-            font-size: 2.5em;
+            font-size: 3em;
             margin: 0;
         }
         header p {
-            font-size: 1.2em;
+            font-size: 1.5em;
             margin: 5px 0 0;
         }
         nav {
             background-color: rgba(0, 0, 0, 0.8);
             display: flex;
             justify-content: center;
-            padding: 10px 0;
+            padding: 12px 0;
+            transition: background-color 0.3s ease;
         }
         nav a {
             color: white;
             text-decoration: none;
-            margin: 0 20px;
-            font-size: 18px;
-            font-weight: bold;
+            margin: 0 25px;
+            font-size: 1.1em;
+            font-weight: 600;
+            padding: 10px 15px;
+            transition: color 0.3s, background-color 0.3s;
         }
         nav a:hover {
             color: #ff6347;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
         }
         section {
             display: none;
@@ -60,20 +66,28 @@
             display: flex;
             justify-content: space-around;
             flex-wrap: wrap;
-            margin-top: 20px;
+            margin-top: 40px;
         }
         .destination {
-            background-color: rgba(255, 255, 255, 0.8);
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             width: 30%;
-            margin: 10px;
+            margin: 15px;
             overflow: hidden;
             text-align: center;
+            transition: transform 0.3s ease;
+        }
+        .destination:hover {
+            transform: translateY(-5px);
         }
         .destination img {
             width: 100%;
             height: auto;
+            transition: opacity 0.3s;
+        }
+        .destination img:hover {
+            opacity: 0.9;
         }
         .destination h3 {
             padding: 15px;
@@ -84,17 +98,40 @@
         .destination p {
             padding: 15px;
             color: #333;
+            font-size: 1.1em;
         }
         .about-content {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
-            background-color: rgba(255, 255, 255, 0.8);
+            background-color: rgba(255, 255, 255, 0.85);
             color: #333;
-            padding: 20px;
-            border-radius: 10px;
-            font-size: 1.1em;
-            line-height: 1.6em;
+            padding: 30px;
+            border-radius: 12px;
+            font-size: 1.2em;
+            line-height: 1.8em;
             text-align: left;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        @media (max-width: 768px) {
+            .destination {
+                width: 45%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .destination {
+                width: 100%;
+            }
+
+            header h1 {
+                font-size: 2.2em;
+            }
+
+            nav a {
+                font-size: 1em;
+                margin: 0 15px;
+            }
         }
     </style>
 </head>
@@ -111,14 +148,12 @@
     <a href="#about" onclick="showSection('about')">About</a>
 </nav>
 
-
 <section id="home" class="active">
     <div class="container">
         <h2>WELCOME TO KYOTO JAPAN</h2>
         <p>Let's explore the breathtaking beauty of Kyoto, Japan</p>
     </div>
 </section>
-
 
 <section id="destinations">
     <h2>Featured Destinations</h2>
@@ -141,7 +176,6 @@
     </div>
 </section>
 
-
 <section id="about">
     <h2>About This Site</h2>
     <div class="about-content">
@@ -152,13 +186,10 @@
 </section>
 
 <script>
-   
     function showSection(sectionId) {
-       
         const sections = document.querySelectorAll('section');
         sections.forEach(section => section.classList.remove('active'));
 
-       
         const selectedSection = document.getElementById(sectionId);
         if (selectedSection) {
             selectedSection.classList.add('active');
