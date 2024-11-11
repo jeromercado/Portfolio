@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -37,7 +37,7 @@
       padding: 20px;
       border: 2px solid rgba(255, 255, 255, 0.5);
       border-radius: 10px;
-      margin: 10vh auto;
+      margin: 5vh auto;
       width: 90%;
       max-width: 800px;
     }
@@ -53,8 +53,9 @@
     .portfolio-btn {
       margin-top: 20px;
       display: flex;
-      flex-direction: column;
-      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
     }
 
     .btn {
@@ -102,20 +103,23 @@
       text-decoration: underline;
     }
 
-    @media (min-width: 576px) {
-      .portfolio-btn {
-        flex-direction: row;
-        flex-wrap: wrap;
+    @media (min-width: 768px) {
+      h1 {
+        font-size: 2rem;
+      }
+
+      .container {
+        width: 80%;
       }
     }
 
-    @media (max-width: 575.98px) {
+    @media (max-width: 767.98px) {
       .navbar-brand {
-        font-size: 18px;
+        font-size: 1.5rem;
       }
 
       h1 {
-        font-size: 24px;
+        font-size: 1.75rem;
       }
 
       .btn {
@@ -128,7 +132,7 @@
 
       .container {
         width: 95%;
-        padding: 10px;
+        padding: 15px;
       }
     }
   </style>
@@ -175,39 +179,26 @@
       <h1>My Projects</h1>
       <p>Here are some of the projects I have worked on.</p>
 
+      
+
       <div class="portfolio-btn">
-        <button class="btn" onclick="showPortfolio('portfolio1')">Portfolio 1</button>
-        <button class="btn" onclick="showPortfolio('portfolio2')">Portfolio 2</button>
-        <button class="btn" onclick="showPortfolio('portfolio3')">Portfolio 3</button>
-        <button class="btn" onclick="showPortfolio('portfolio4')">Portfolio 4</button>
-        <button class="btn" onclick="showPortfolio('portfolio5')">Portfolio 5</button>
+        <a href="portfolio1.html" target="_blank">
+          <button class="btn">Portfolio 1</button>
+        </a>
+        <a href="portfolio2.html" target="_blank">
+          <button class="btn">Portfolio 2</button>
+        </a>
+        <a href="portfolio3.html" target="_blank">
+          <button class="btn">Portfolio 3</button>
+        </a>
+        <a href="portfolio4.html" target="_blank">
+          <button class="btn">Portfolio 4</button>
+        </a>
+        <a href="portfolio5.html" target="_blank">
+          <button class="btn">Portfolio 5</button>
+        </a>
       </div>
-
-      <div id="portfolio1" class="portfolio section">
-        <h3>Portfolio Item 1</h3>
-        <p>This is the content of portfolio item 1.</p>
-      </div>
-
-      <div id="portfolio2" class="portfolio section">
-        <h3>Portfolio Item 2</h3>
-        <p>This is the content of portfolio item 2.</p>
-      </div>
-
-      <div id="portfolio3" class="portfolio section">
-        <h3>Portfolio Item 3</h3>
-        <p>This is the content of portfolio item 3.</p>
-      </div>
-
-      <div id="portfolio4" class="portfolio section">
-        <h3>Portfolio Item 4</h3>
-        <p>This is the content of portfolio item 4.</p>
-      </div>
-
-      <div id="portfolio5" class="portfolio section">
-        <h3>Portfolio Item 5</h3>
-        <p>This is the content of portfolio item 5.</p>
-      </div>
-    </div>
+      
 
     <div id="contact" class="section">
       <h1>Contact Me</h1>
