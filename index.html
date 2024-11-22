@@ -7,7 +7,7 @@
   <title>Homepage Portfolio</title>
 
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
   <!-- Bootstrap CSS -->
@@ -15,21 +15,30 @@
 
   <style>
     body {
-      background: url('https://cdn.dribbble.com/users/2318504/screenshots/13922760/media/e7fccb35cc9b5092e278e4b49edb28d7.jpg') no-repeat center center fixed;
-      background-size: cover;
-      color: #ffffff;
-      font-family: 'Montserrat', sans-serif;
       margin: 0;
+      font-family: 'Orbitron', sans-serif;
+      color: #ffffff;
+      background-color: #000;
+      overflow: hidden;
+    }
+
+    /* Outer space background with constellation animation */
+    canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
     }
 
     .navbar {
-      background-color: rgba(34, 34, 34, 0.8);
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+      background-color: rgba(0, 0, 0, 0.7);
+      box-shadow: 0 2px 10px rgba(255, 255, 255, 0.1);
     }
 
     .navbar-brand,
     .nav-link {
       color: #00bcd4 !important;
+      font-family: 'Poppins', sans-serif;
     }
 
     .navbar-nav .nav-link:hover {
@@ -45,6 +54,7 @@
       margin: 5vh auto;
       width: 90%;
       max-width: 800px;
+      z-index: 1;
     }
 
     .section {
@@ -131,6 +141,9 @@
 
 <body>
 
+  <!-- Canvas for constellation animation -->
+  <canvas id="constellationCanvas"></canvas>
+
   <nav class="navbar navbar-expand-lg navbar-dark">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">JEROME MERCADO</a>
@@ -178,8 +191,8 @@
         <a href="midterm.html" target="_blank">
           <button class="btn">Project 2</button>
         </a>
-        <a href="portfolio3.html" target="_blank">
-          <button class="btn">Project 3 <p>Upcoming...</p></button>
+        <a href="index2.html" target="_blank">
+          <button class="btn">Project 3 </button>
         </a>
         <a href="portfolio4.html" target="_blank">
           <button class="btn">Project 4 <p>Upcoming...</p></button>
@@ -199,6 +212,51 @@
       document.querySelectorAll('.section').forEach(section => section.classList.remove('active'));
       document.getElementById(id).classList.add('active');
     }
+
+    // Constellation animation
+    const canvas = document.getElementById('constellationCanvas');
+    const ctx = canvas.getContext('2d');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    const stars = [];
+    const numStars = 100;
+
+    for (let i = 0; i < numStars; i++) {
+      stars.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        radius: Math.random() * 1.5,
+        speedX: Math.random() * 0.5 - 0.25,
+        speedY: Math.random() * 0.5 - 0.25
+      });
+    }
+
+    function drawStars() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.fillStyle = 'rgba(255, 255, 255, 0.8)';
+      ctx.strokeStyle = 'rgba(255, 255, 255, 0.5)';
+      ctx.lineWidth = 0.5;
+
+      stars.forEach(star => {
+        ctx.beginPath();
+        ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.stroke();
+
+        star.x += star.speedX;
+        star.y += star.speedY;
+
+        if (star.x > canvas.width) star.x = 0;
+        if (star.x < 0) star.x = canvas.width;
+        if (star.y > canvas.height) star.y = 0;
+        if (star.y < 0) star.y = canvas.height;
+      });
+
+      requestAnimationFrame(drawStars);
+    }
+
+    drawStars();
   </script>
 
 </body>
